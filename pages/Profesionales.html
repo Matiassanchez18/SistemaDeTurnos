@@ -125,7 +125,9 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="ModalLabel">Modal title</h1>
+            <h2 class="modal-title fs-5" id="ModalLabel">
+              Agregar profesional
+            </h2>
             <button
               type="button"
               class="btn-close"
@@ -133,16 +135,76 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="Nombre" class="form-label">Nombre completo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Nombre"
+                  placeholder="ej: Pedro Juarez"
+                  required
+                  minlength="5"
+                  maxlength="100"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Matricula" class="form-label">Matricula</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Matricula"
+                  required
+                  minlength="4"
+                  maxlength="50"
+                  placeholder="ej: Radiologo"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Especialidad" class="form-label"
+                  >Especialidad</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Especialidad"
+                  required
+                  minlength="4"
+                  maxlength="50"
+                  placeholder="ej: 571238941"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="diasatencion" class="form-label"
+                  >dias de atencion disponibiles</label
+                >
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="diasatencion"
+                  required
+                  minlength="4"
+                  maxlength="50"
+                  placeholder="ej: Lunes,Martes y Miercoles"
+                />
+                <div id="diasatencion" class="form-text">
+                  Escriba los dias sin ",".
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              Close
+              cerrar
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
