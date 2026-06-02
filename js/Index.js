@@ -9,8 +9,10 @@ const verificarUsuario = () => {
 
   const lista = document.getElementById("ulnav");
 
-  if (admin.toLocaleLowerCase() === inputUsuario.toLocaleLowerCase() &&
-    contraseña === inputContraseña) {
+  if (
+    admin.toLocaleLowerCase() === inputUsuario.toLocaleLowerCase() &&
+    contraseña === inputContraseña
+  ) {
     const li = document.createElement("li");
 
     lista.innerHTML = `
@@ -25,6 +27,11 @@ const verificarUsuario = () => {
               </li>
              
     `;
+
+    const modalElement = document.getElementById("Modal");
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    modal.hide();
+
     lista.appendChild(li);
 
     alert("Bienvenido!!");
