@@ -7,13 +7,28 @@ const verificarUsuario = () => {
   const admin = "admin1234";
   const contraseña = "12345";
 
- if (
-  admin.toLocaleLowerCase() === inputUsuario.toLocaleLowerCase() &&
-  contraseña === inputContraseña
-) {
-  console.log("si");
-} else {
-  console.log("no");
-}
-}
+  const lista = document.getElementById("ulnav");
+
+  if (
+    admin.toLocaleLowerCase() === inputUsuario.toLocaleLowerCase() &&
+    contraseña === inputContraseña
+  ) {
+    lista.innerHTML = `
+    <li class="nav-item">
+                <a class="nav-link" href="#">Pacientes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Turnos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profesionales</a>
+              </li>
+             
+    `;
+
+    alert("Bienvenido!!");
+  } else {
+    alert("Contrasña o usuario incorrecto");
+  }
+};
 btn.addEventListener("click", verificarUsuario);
