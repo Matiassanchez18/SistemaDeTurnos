@@ -9,10 +9,10 @@ const verificarUsuario = () => {
 
   const lista = document.getElementById("ulnav");
 
-  if (
-    admin.toLocaleLowerCase() === inputUsuario.toLocaleLowerCase() &&
-    contraseña === inputContraseña
-  ) {
+  if (admin.toLocaleLowerCase() === inputUsuario.toLocaleLowerCase() &&
+    contraseña === inputContraseña) {
+    const li = document.createElement("li");
+
     lista.innerHTML = `
     <li class="nav-item">
                 <a class="nav-link" href="#">Pacientes</a>
@@ -25,6 +25,7 @@ const verificarUsuario = () => {
               </li>
              
     `;
+    lista.appendChild(li);
 
     alert("Bienvenido!!");
   } else {
