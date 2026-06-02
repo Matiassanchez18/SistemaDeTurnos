@@ -14,26 +14,54 @@
   </head>
   <body>
     <header class="header">
-      <div class="brand">
-        <h1>Mi Turno Web</h1>
+  <nav class="navbar navbar-expand-lg w-100">
+
+    <div class="container-fluid">
+
+      <div class="brand d-flex align-items-center">
+        <h1 class="me-3 mb-0">Mi Turno Web</h1>
 
         <div class="consultorio">
           <span>Consultorio</span>
           <strong>Sanatorio Central</strong>
         </div>
       </div>
-      <ul class="navbar-nav" id="ulnav">
-        <li class="nav-item">
-          <button
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#Modal"
-          >
-            Iniciar sesión
-          </button>
-        </li>
-      </ul>
-    </header>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav align-items-center">
+
+          <li class="nav-item">
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#Modal"
+            >
+              Iniciar sesión
+            </button>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+  </nav>
+</header>
 
     <main>
       <section class="hero">
