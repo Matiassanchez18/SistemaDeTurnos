@@ -22,7 +22,7 @@ const actualizarProfesional = async () => {
   }
 };
 
-actualizarProfesional()
+actualizarProfesional();
 
 const agregarProfesional = async () => {
   const inputNombre = document.getElementById("Nombre").value;
@@ -46,5 +46,15 @@ const agregarProfesional = async () => {
     alert("Se actualizo correctamente.");
   } catch (error) {
     console.log("ocurrio un error " + error.message);
+  }
+};
+
+const eliminarProfesional = async () => {
+  try {
+    const consulta = await axios.delete(
+      `http://localhost:3000/Profesionales${id}`,
+    );
+  } catch (error) {
+    console.log("ocurio un error " + error.message);
   }
 };
