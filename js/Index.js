@@ -17,7 +17,7 @@ const verificarUsuario = () => {
 
     lista.innerHTML = `
     <li class="nav-item">
-                <a class="nav-link" href="#">Pacientes</a>
+                <a class="nav-link" href="./pages/Pacientes.html">Pacientes</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Turnos</a>
