@@ -86,4 +86,28 @@ const inputEditar = async (
   }
 };
 
+const editarProfesional = async () => {
+  const inputNombre = document.getElementById("Nombre").value;
+  const inputMatricula = document.getElementById("Matricula").value;
+  const inputEspecialidad = document.getElementById("Especialidad").value;
+  const inputDias = document.getElementById("diasatencion").value;
 
+  btnEnviar.onclick.agregarProfesional();
+
+  const datosModificados = {
+    nombreCompleto: inputDias,
+    Matricula: inputMatricula,
+    Especialidad: inputEspecialidad,
+    Dias: inputDias,
+  };
+
+  const consulta = await axios.put(
+    "http://localhost:3000/Profesionales",
+    datos,
+  );
+  actualizarProfesional;
+  try {
+  } catch (error) {
+    console.log("ocurrio un error " + error.message);
+  }
+};
