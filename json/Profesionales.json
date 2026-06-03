@@ -1,0 +1,12 @@
+{
+  "Profesionales": [
+    {
+      "id": "0",
+      "nombreCompleto": "Matias sanchez",
+      "Matricula": 45729272,
+      "Especialidad": "Otorringo",
+      "Dias": "lunes martes y mirecoles"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
