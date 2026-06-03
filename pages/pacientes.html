@@ -81,6 +81,8 @@
               <th scope="col">Fecha Nacimiento</th>
               <th scope="col">Telefono</th>
               <th scope="col">Obra Social</th>
+              <th scope="col">Acciones</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -91,6 +93,10 @@
               <td>1990-04-12</td>
               <td>3815550001</td>
               <td>OSDE</td>
+              <td>
+                <button class="btn btn-danger"><i class="bi bi-trash "></i></button>
+                <button class="btn btn-warning">      <i class="bi bi-pencil"></i></button>
+              </td>
             </tr>
             <tr>
               <th scope="row">2</th>
@@ -99,6 +105,10 @@
               <td>1990-04-12</td>
               <td>3815521511</td>
               <td>subsidio</td>
+               <td>
+                <button class="btn btn-danger"><i class="bi bi-trash "></i></button>
+                <button class="btn btn-warning">      <i class="bi bi-pencil"></i></button>
+              </td>
             </tr>
             <tr>
               <th scope="row">3</th>
@@ -107,10 +117,18 @@
               <td>2000-05-25</td>
               <td>3812345652</td>
               <td>Sancor</td>
+               <td>
+                <button class="btn btn-danger"><i class="bi bi-trash "></i></button>
+                <button class="btn btn-warning">      <i class="bi bi-pencil"></i></button>
+              </td>
             </tr>
           </tbody>
         </table>
       </section>
+
+      <!-- tabla acciones -->
+       
+
 
       <!-- botones -->
       <div class="d-flex justify-content-center mt-4">
@@ -130,7 +148,7 @@
         </a>
 
         <button type="button" class="btn btn-primary me-4">
-          <i class="bi bi-plus"></i>
+          <i class="bi bi-clipboard2-data-fill me-3"></i>
           Ver Estadísticas
         </button>
       </div>
@@ -148,7 +166,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h2 class="modal-title fs-5" id="ModalLabel">
-              Agregar profesional
+              Agregar Paciente
             </h2>
             <button
               type="button"
@@ -160,7 +178,7 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="Nombre" class="form-label">Nombre completo</label>
+                <label for="Nombre" class="form-label">Nombre Completo</label>
                 <input
                   type="text"
                   class="form-control"
@@ -172,51 +190,47 @@
                 />
               </div>
               <div class="mb-3">
-                <label for="Matricula" class="form-label">Matricula</label>
+                <label for="DNI" class="form-label">DNI</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="Matricula"
+                  id="DNI"
                   required
-                  minlength="4"
-                  maxlength="50"
-                  placeholder="ej: Radiologo"
+                  minlength="8"
+                  maxlength="8"
+                  placeholder="ej: 44123546"
                 />
               </div>
               <div class="mb-3">
-                <label for="Especialidad" class="form-label"
-                  >Especialidad</label
+                <label for="Fecha" class="form-label"
+                  >Fecha de Nacimiento</label
                 >
                 <input
-                  type="text"
+                  type="date"
                   class="form-control"
-                  id="Especialidad"
+                  id="Fecha"
                   required
-                  minlength="4"
-                  maxlength="50"
-                  placeholder="ej: 571238941"
+                  placeholder="ej:1990-04-12"
                 />
               </div>
               <div class="mb-3">
-                <label for="diasatencion" class="form-label"
-                  >dias disponibiles</label
+                <label for="telefono" class="form-label"
+                  >Telefono</label
                 >
 
                 <input
                   type="text"
                   class="form-control"
-                  id="diasatencion"
+                  id="telefono"
                   required
-                  minlength="4"
-                  maxlength="50"
-                  placeholder="ej: Lunes,Martes y Miercoles"
+                  minlength="10"
+                  maxlength="10"
+                  placeholder="ej: 38123546272"
                 />
-                <div id="diasatencion" class="form-text">
-                  Escriba los dias sin ",".
-                </div>
+                
               </div>
 
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <button type="button" class="btn btn-primary">Enviar</button>
             </form>
           </div>
           <div class="modal-footer">
@@ -225,7 +239,7 @@
               class="btn btn-secondary"
               data-bs-dismiss="modal"
             >
-              cerrar
+              Cerrar
             </button>
           </div>
         </div>
