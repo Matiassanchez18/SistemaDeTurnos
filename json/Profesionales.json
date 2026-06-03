@@ -4,8 +4,15 @@
       "id": "0",
       "nombreCompleto": "Matias sanchez",
       "Matricula": 45729272,
-      "Especialidad": "Otorringo",
+      "Especialidad": "Otorrino",
       "Dias": "lunes martes y mirecoles"
+    },
+    {
+      "nombreCompleto": "pedro medrano",
+      "Matricula": "6417823",
+      "Especialidad": "Cardiologo",
+      "Dias": "martes miercoles jueves",
+      "id": "_7tMxam8hkU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,9 +1,6 @@
-const actualizarProfesional = async () => {
-  const inputNombre = document.getElementById("Nombre").value;
-  const inputMatricula = document.getElementById("Matricula").value;
-  const inputEspecialidad = document.getElementById("Especialidad").value;
-  const inputDias = document.getElementById("diasatencion").value;
+const btnEnviar = document.getElementById("btnEnviar");
 
+const actualizarProfesional = async () => {
   try {
     const consulta = await axios.get("http://localhost:3000/Profesionales");
     const datos = await consulta.data;
@@ -26,3 +23,28 @@ const actualizarProfesional = async () => {
 };
 
 actualizarProfesional()
+
+const agregarProfesional = async () => {
+  const inputNombre = document.getElementById("Nombre").value;
+  const inputMatricula = document.getElementById("Matricula").value;
+  const inputEspecialidad = document.getElementById("Especialidad").value;
+  const inputDias = document.getElementById("diasatencion").value;
+
+  try {
+    const datos = {
+      nombreCompleto: inputNombre,
+      Matricula: inputMatricula,
+      Especialidad: inputEspecialidad,
+      Dias: inputDias,
+    };
+
+    const consulta = await axios.post(
+      "http://localhost:3000/Profesionales",
+      datos,
+    );
+    actualizarProfesional();
+    alert("Se actualizo correctamente.");
+  } catch (error) {
+    console.log("ocurrio un error " + error.message);
+  }
+};
