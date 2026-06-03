@@ -1,13 +1,6 @@
 {
   "Profesionales": [
     {
-      "id": "0",
-      "nombreCompleto": "Matias sanchez",
-      "Matricula": 45729272,
-      "Especialidad": "Otorrino",
-      "Dias": "lunes martes y mirecoles"
-    },
-    {
       "nombreCompleto": "pedro medrano",
       "Matricula": "6417823",
       "Especialidad": "Cardiologo",

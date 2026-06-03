@@ -14,6 +14,10 @@ const actualizarProfesional = async () => {
       <th>${profesionales.Matricula}</th>
       <th>${profesionales.Especialidad}</th>
       <th>${profesionales.Dias}</th>
+      <th>
+      <button class="btn btn-danger" onclick="eliminarProfesional('${profesionales.id}')"><i class="bi bi-trash "></i></button>
+      <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+      </th>
 `;
       tabla.appendChild(tr);
     });
@@ -49,11 +53,12 @@ const agregarProfesional = async () => {
   }
 };
 
-const eliminarProfesional = async () => {
+const eliminarProfesional = async (id) => {
   try {
     const consulta = await axios.delete(
-      `http://localhost:3000/Profesionales${id}`,
+      `http://localhost:3000/Profesionales/${id}`,
     );
+    actualizarProfesional();
   } catch (error) {
     console.log("ocurio un error " + error.message);
   }
