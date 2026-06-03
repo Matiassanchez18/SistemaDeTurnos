@@ -16,7 +16,7 @@ const actualizarProfesional = async () => {
       <th>${profesionales.Dias}</th>
       <th>
       <button class="btn btn-danger" onclick="eliminarProfesional('${profesionales.id}')"><i class="bi bi-trash "></i></button>
-      <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modal" onclick="inputEditar('${profesionales.nombreCompleto}','${profesionales.Matricula}','${profesionales.Especialidad}','${profesionales.Dias}')"><i class="bi bi-pencil"></i></button>
       </th>
 `;
       tabla.appendChild(tr);
@@ -63,3 +63,27 @@ const eliminarProfesional = async (id) => {
     console.log("ocurio un error " + error.message);
   }
 };
+
+const inputEditar = async (
+  nombreCompleto,
+  Matricula,
+  Especialidad,
+  Dias,
+  id,
+) => {
+  try {
+    const inputNombre = (document.getElementById("Nombre").value =
+      nombreCompleto);
+    const inputMatricula = (document.getElementById("Matricula").value =
+      Matricula);
+    const inputEspecialidad = (document.getElementById("Especialidad").value =
+      Especialidad);
+    const inputDias = (document.getElementById("diasatencion").value = Dias);
+
+    btnEnviar.textContent = "Editar Profesional";
+  } catch (error) {
+    console.log("Ocurrio un error " + error.message);
+  }
+};
+
+
