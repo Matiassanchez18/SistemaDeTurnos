@@ -2,10 +2,24 @@
   "Profesionales": [
     {
       "nombreCompleto": "pedro medrano",
-      "Matricula": "6417823",
+      "Matricula": "1234123412",
       "Especialidad": "Cardiologo",
       "Dias": "martes miercoles jueves",
       "id": "_7tMxam8hkU"
+    },
+    {
+      "nombreCompleto": "Joaquin Herrera",
+      "Matricula": "2341273647",
+      "Especialidad": "Radiologo",
+      "Dias": "martes jueves y viernes",
+      "id": "IXaQS12c_Kk"
+    },
+    {
+      "nombreCompleto": "Joaquin Herrera",
+      "Matricula": "1234567891",
+      "Especialidad": "Radiologo",
+      "Dias": "martes jueves y viernes",
+      "id": "K5NllEuRNho"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

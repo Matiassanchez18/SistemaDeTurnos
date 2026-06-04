@@ -1,5 +1,7 @@
 const btnEnviar = document.getElementById("btnEnviar");
 
+let IdEditar = null;
+
 const actualizarProfesional = async () => {
   try {
     const consulta = await axios.get("http://localhost:3000/Profesionales");
@@ -16,7 +18,7 @@ const actualizarProfesional = async () => {
       <th>${profesionales.Dias}</th>
       <th>
       <button class="btn btn-danger" onclick="eliminarProfesional('${profesionales.id}')"><i class="bi bi-trash "></i></button>
-      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modal" onclick="inputEditar('${profesionales.nombreCompleto}','${profesionales.Matricula}','${profesionales.Especialidad}','${profesionales.Dias}')"><i class="bi bi-pencil"></i></button>
+      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modal" onclick="inputEditar('${profesionales.nombreCompleto}','${profesionales.Matricula}','${profesionales.Especialidad}','${profesionales.Dias}','${profesionales.id}')"><i class="bi bi-pencil"></i></button>
       </th>
 `;
       tabla.appendChild(tr);
@@ -81,6 +83,8 @@ const inputEditar = async (
     const inputDias = (document.getElementById("diasatencion").value = Dias);
 
     btnEnviar.textContent = "Editar Profesional";
+    btnEnviar.onclick = editarProfesional;
+    IdEditar = id;
   } catch (error) {
     console.log("Ocurrio un error " + error.message);
   }
@@ -92,21 +96,23 @@ const editarProfesional = async () => {
   const inputEspecialidad = document.getElementById("Especialidad").value;
   const inputDias = document.getElementById("diasatencion").value;
 
-  btnEnviar.onclick.agregarProfesional();
+  
+  try {
+    btnEnviar.onclick = agregarProfesional;
 
   const datosModificados = {
-    nombreCompleto: inputDias,
+    nombreCompleto: inputNombre,
     Matricula: inputMatricula,
     Especialidad: inputEspecialidad,
     Dias: inputDias,
   };
 
   const consulta = await axios.put(
-    "http://localhost:3000/Profesionales",
-    datos,
+    `http://localhost:3000/Profesionales/${IdEditar}`,
+    datosModificados,
   );
   actualizarProfesional;
-  try {
+  alert("Se edito los datos correctamente")
   } catch (error) {
     console.log("ocurrio un error " + error.message);
   }
