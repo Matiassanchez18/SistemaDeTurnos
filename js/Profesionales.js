@@ -96,23 +96,22 @@ const editarProfesional = async () => {
   const inputEspecialidad = document.getElementById("Especialidad").value;
   const inputDias = document.getElementById("diasatencion").value;
 
-  
   try {
     btnEnviar.onclick = agregarProfesional;
 
-  const datosModificados = {
-    nombreCompleto: inputNombre,
-    Matricula: inputMatricula,
-    Especialidad: inputEspecialidad,
-    Dias: inputDias,
-  };
+    const datosModificados = {
+      nombreCompleto: inputNombre,
+      Matricula: inputMatricula,
+      Especialidad: inputEspecialidad,
+      Dias: inputDias,
+    };
 
-  const consulta = await axios.put(
-    `http://localhost:3000/Profesionales/${IdEditar}`,
-    datosModificados,
-  );
-  actualizarProfesional;
-  alert("Se edito los datos correctamente")
+    const consulta = await axios.put(
+      `http://localhost:3000/Profesionales/${IdEditar}`,
+      datosModificados,
+    );
+    actualizarProfesional;
+    alert("Se edito los datos correctamente");
   } catch (error) {
     console.log("ocurrio un error " + error.message);
   }

@@ -21,6 +21,24 @@
       "Dias": "martes jueves y viernes",
       "id": "K5NllEuRNho"
     }
+  ],  "pacientes": [
+    {
+      "id": 1,
+      "nombre": "Laura Martínez",
+      "dni": "35678901",
+      "fechaNacimiento": "1990-04-12",
+      "telefono": "3815550001",
+      "obraSocial": "OSDE"
+    }
+  ],"turnos": [
+    {
+      "id": 1,
+      "pacienteId": 1,
+      "profesionalId": 1,
+      "fecha": "2025-07-14",
+      "horario": "10:30",
+      "estado": "Pendiente"
+    }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }
