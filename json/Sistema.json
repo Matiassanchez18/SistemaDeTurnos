@@ -1,0 +1,32 @@
+{
+  "Profesionales": [
+    {
+      "nombreCompleto": "pedro medrano",
+      "Matricula": "1234123412",
+      "Especialidad": "Cardiologo",
+      "Dias": "martes miercoles jueves",
+      "id": "VW_d-L-0Ei4"
+    }
+  ],
+  "pacientes": [
+    {
+      "id": "1",
+      "nombre": "Laura Martínez",
+      "dni": "35678901",
+      "fechaNacimiento": "1990-04-12",
+      "telefono": "3815550001",
+      "obraSocial": "OSDE"
+    }
+  ],
+  "turnos": [
+    {
+      "id": "1",
+      "pacienteId": 1,
+      "profesionalId": "_7tMxam8hkU",
+      "fecha": "2025-07-14",
+      "horario": "10:30",
+      "estado": "Pendiente"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
