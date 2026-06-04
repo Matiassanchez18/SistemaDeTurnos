@@ -5,36 +5,24 @@
       "Matricula": "1234123412",
       "Especialidad": "Cardiologo",
       "Dias": "martes miercoles jueves",
-      "id": "_7tMxam8hkU"
-    },
-    {
-      "nombreCompleto": "Joaquin Herrera",
-      "Matricula": "2341273647",
-      "Especialidad": "Radiologo",
-      "Dias": "martes jueves y viernes",
-      "id": "IXaQS12c_Kk"
-    },
-    {
-      "nombreCompleto": "Joaquin Herrera",
-      "Matricula": "1234567891",
-      "Especialidad": "Radiologo",
-      "Dias": "martes jueves y viernes",
-      "id": "K5NllEuRNho"
+      "id": "VW_d-L-0Ei4"
     }
-  ],  "pacientes": [
+  ],
+  "pacientes": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Laura Martínez",
       "dni": "35678901",
       "fechaNacimiento": "1990-04-12",
       "telefono": "3815550001",
       "obraSocial": "OSDE"
     }
-  ],"turnos": [
+  ],
+  "turnos": [
     {
-      "id": 1,
+      "id": "1",
       "pacienteId": 1,
-      "profesionalId": 1,
+      "profesionalId": "_7tMxam8hkU",
       "fecha": "2025-07-14",
       "horario": "10:30",
       "estado": "Pendiente"

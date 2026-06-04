@@ -57,7 +57,13 @@ const agregarProfesional = async () => {
 
 const eliminarProfesional = async (id) => {
   try {
-    const consulta = await axios.delete(
+    const eliminar = await VerificarEliminar(id);
+    
+    if(!eliminar){
+        return;
+    }
+
+   await axios.delete(
       `http://localhost:3000/Profesionales/${id}`,
     );
     actualizarProfesional();
@@ -114,5 +120,24 @@ const editarProfesional = async () => {
     alert("Se edito los datos correctamente");
   } catch (error) {
     console.log("ocurrio un error " + error.message);
+  }
+};
+
+const VerificarEliminar = async (id) => {
+  try {
+    const consulta = await axios.get(
+      `http://localhost:3000/turnos?profesionalId=${id}`,
+    );
+    const turnos = consulta.data;
+
+    if (turnos.length > 0) {
+      return confirm(
+        `el profesional tiene ${turnos.length} turno(s) asignado(s) ¿desea eliminarlo igualmente?`,
+      );
+    }
+    return true;
+  } catch (r) {
+    console.log("Ocurrio un error " + r.message);
+    return false;
   }
 };
