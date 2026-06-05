@@ -14,54 +14,48 @@
   </head>
   <body>
     <header class="header">
-  <nav class="navbar navbar-expand-lg w-100">
+      <nav class="navbar navbar-expand-lg w-100">
+        <div class="container-fluid">
+          <div class="brand d-flex align-items-center">
+            <h1 class="me-3 mb-0">Mi Turno Web</h1>
 
-    <div class="container-fluid">
+            <div class="consultorio">
+              <span>Consultorio</span>
+              <strong>Sanatorio Central</strong>
+            </div>
+          </div>
 
-      <div class="brand d-flex align-items-center">
-        <h1 class="me-3 mb-0">Mi Turno Web</h1>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="consultorio">
-          <span>Consultorio</span>
-          <strong>Sanatorio Central</strong>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav align-items-center" id="ulnav">
+              <li class="nav-item">
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#Modal"
+                >
+                  Iniciar sesión
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div
-        class="collapse navbar-collapse justify-content-end"
-        id="navbarNav"
-      >
-        <ul class="navbar-nav align-items-center" id="ulnav">
-
-          <li class="nav-item">
-            <button
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#Modal"
-            >
-              Iniciar sesión
-            </button>
-          </li>
-
-        </ul>
-      </div>
-
-    </div>
-
-  </nav>
-</header>
+      </nav>
+    </header>
 
     <main>
       <section class="hero">
@@ -131,6 +125,74 @@
               <li>Acceso rápido</li>
               <li>Diseño adaptable</li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="container info py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h2 class="mb-4">Registrarse para turnos</h2>
+
+            <form >
+              <div class="mb-3">
+                <label for="Nombre" class="form-label">Nombre Completo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Nombre"
+                  placeholder="ej: Pedro Juarez"
+                  required
+                  minlength="5"
+                  maxlength="100"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="DNI" class="form-label">DNI</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="DNI"
+                  required
+                  minlength="8"
+                  maxlength="8"
+                  placeholder="ej: 44123546"
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="Fecha" class="form-label">
+                  Fecha de Nacimiento
+                </label>
+                <input type="date" class="form-control" id="Fecha" required />
+              </div>
+
+              <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="telefono"
+                  required
+                  minlength="10"
+                  maxlength="10"
+                  placeholder="ej: 3812354627"
+                />
+              </div>
+
+              <button type="button" class="w-100 btn btn-primary">
+                Enviar
+              </button>
+            </form>
+          </div>
+
+          <div class="col-lg-6 text-center d-none d-lg-block">
+            <img
+              src="https://images.pexels.com/photos/4173248/pexels-photo-4173248.jpeg"
+              class="img-fluid rounded-4 shadow"
+              alt="Médico atendiendo paciente"
+            />
           </div>
         </div>
       </section>
