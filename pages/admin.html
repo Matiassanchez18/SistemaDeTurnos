@@ -66,28 +66,84 @@
         </section>
       </section>
 
-      <section class="d-flex gap-3 align-content-lg-around container">
-        <div class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3">
+      <section class="d-flex gap-3 align-content-lg-around container mb-5">
+        <div
+          class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3"
+        >
           <h4>Pacientes registrados</h4>
           <h3 id="PacientesRegistrados">200</h3>
-          <a href="./pacientes.html" class="btn btn-primary " >Ver pacientes</a>
+          <a href="./pacientes.html" class="btn btn-primary">Ver pacientes</a>
         </div>
 
-        <div class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3">
+        <div
+          class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3"
+        >
           <h4>Medicos/Profesionales</h4>
           <h3 id="MedicosProfesionales">69</h3>
-          <a href="./Profesionales.html" class="btn btn-primary " >Profesionales</a>
+          <a href="./Profesionales.html" class="btn btn-primary"
+            >Profesionales</a
+          >
         </div>
 
-        <div class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3">
+        <div
+          class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3"
+        >
           <h4>Trunos</h4>
           <h3 id="=Trunos">40</h3>
         </div>
 
-        <div class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3">
+        <div
+          class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3"
+        >
           <h4>Turnos terminados</h4>
           <h3>900</h3>
         </div>
+      </section>
+
+      <section class="container mt-5">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Hora</th>
+              <th scope="col">ID pacientes</th>
+              <th scope="col">ID Medicos</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaTurnos">
+            <tr>
+              <td>1</td>
+              <td>2026-06-15</td>
+              <td>10:30</td>
+              <td>35678901</td>
+              <td>101</td>
+              <td>Pendiente</td>
+              <td>
+                <div class="acciones">
+                  <button class="btn btn-danger"><i class="bi bi-trash "></i></button>
+                  <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2026-06-15</td>
+              <td>11:00</td>
+              <td>35545401</td>
+              <td>102</td>
+              <td>Pendiente</td>
+              <td>
+                <div class="acciones">
+                  <button class="btn btn-danger"><i class="bi bi-trash "></i></button>
+                  <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
