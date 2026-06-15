@@ -79,6 +79,7 @@
             class="btn btn-dark me-4"
             data-bs-toggle="modal"
             data-bs-target="#Modal"
+            onclick="limpiarFormulario()"
           >
             <i class="bi bi-plus"></i>Nuevo profesional
           </button>
@@ -171,12 +172,7 @@
                 <div class="form-text">Escriba los dias sin ",".</div>
               </div>
 
-              <button
-                id="btnEnviar"
-                type="button"
-                class="btn btn-primary"
-                onclick="agregarProfesional()"
-              >
+              <button id="btnEnviar" type="button" class="btn btn-primary">
                 Enviar
               </button>
             </form>
