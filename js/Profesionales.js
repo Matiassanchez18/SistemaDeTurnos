@@ -5,11 +5,15 @@ let IdEditar = null;
 const actualizarProfesional = async () => {
   try {
     const consulta = await axios.get("http://localhost:3000/Profesionales");
-    const datos = await consulta.data;
+    const datos = consulta.data;
     const tabla = document.getElementById("tabla");
+
+    // Limpiar tabla antes de volver a cargar
+    tabla.innerHTML = "";
 
     datos.forEach((profesionales) => {
       const tr = document.createElement("tr");
+
       tr.innerHTML = `
       <th>${profesionales.id}</th>
       <th>${profesionales.nombreCompleto}</th>
@@ -17,14 +21,31 @@ const actualizarProfesional = async () => {
       <th>${profesionales.Especialidad}</th>
       <th>${profesionales.Dias}</th>
       <th>
-      <button class="btn btn-danger" onclick="eliminarProfesional('${profesionales.id}')"><i class="bi bi-trash "></i></button>
-      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Modal" onclick="inputEditar('${profesionales.nombreCompleto}','${profesionales.Matricula}','${profesionales.Especialidad}','${profesionales.Dias}','${profesionales.id}')"><i class="bi bi-pencil"></i></button>
+        <button class="btn btn-danger" onclick="eliminarProfesional('${profesionales.id}')">
+          <i class="bi bi-trash"></i>
+        </button>
+
+        <button
+          class="btn btn-warning"
+          data-bs-toggle="modal"
+          data-bs-target="#Modal"
+          onclick="inputEditar(
+            '${profesionales.nombreCompleto}',
+            '${profesionales.Matricula}',
+            '${profesionales.Especialidad}',
+            '${profesionales.Dias}',
+            '${profesionales.id}'
+          )"
+        >
+          <i class="bi bi-pencil"></i>
+        </button>
       </th>
-`;
+      `;
+
       tabla.appendChild(tr);
     });
   } catch (error) {
-    console.log("ocurrio un error " + error.message);
+    console.log("Ocurrió un error: " + error.message);
   }
 };
 
@@ -44,56 +65,47 @@ const agregarProfesional = async () => {
       Dias: inputDias,
     };
 
-    const consulta = await axios.post(
-      "http://localhost:3000/Profesionales",
-      datos,
-    );
+    await axios.post("http://localhost:3000/Profesionales", datos);
+
     actualizarProfesional();
-    alert("Se actualizo correctamente.");
+    limpiarFormulario();
+
+    alert("Profesional agregado correctamente.");
   } catch (error) {
-    console.log("ocurrio un error " + error.message);
+    console.log("Ocurrió un error: " + error.message);
   }
 };
 
 const eliminarProfesional = async (id) => {
   try {
     const eliminar = await VerificarEliminar(id);
-    
-    if(!eliminar){
-        return;
-    }
 
-   await axios.delete(
-      `http://localhost:3000/Profesionales/${id}`,
-    );
+    if (!eliminar) return;
+
+    await axios.delete(`http://localhost:3000/Profesionales/${id}`);
+
     actualizarProfesional();
   } catch (error) {
-    console.log("ocurio un error " + error.message);
+    console.log("Ocurrió un error: " + error.message);
   }
 };
 
-const inputEditar = async (
+const inputEditar = (
   nombreCompleto,
   Matricula,
   Especialidad,
   Dias,
-  id,
+  id
 ) => {
-  try {
-    const inputNombre = (document.getElementById("Nombre").value =
-      nombreCompleto);
-    const inputMatricula = (document.getElementById("Matricula").value =
-      Matricula);
-    const inputEspecialidad = (document.getElementById("Especialidad").value =
-      Especialidad);
-    const inputDias = (document.getElementById("diasatencion").value = Dias);
+  document.getElementById("Nombre").value = nombreCompleto;
+  document.getElementById("Matricula").value = Matricula;
+  document.getElementById("Especialidad").value = Especialidad;
+  document.getElementById("diasatencion").value = Dias;
 
-    btnEnviar.textContent = "Editar Profesional";
-    btnEnviar.onclick = editarProfesional;
-    IdEditar = id;
-  } catch (error) {
-    console.log("Ocurrio un error " + error.message);
-  }
+  btnEnviar.textContent = "Editar profesional";
+  btnEnviar.onclick = editarProfesional;
+
+  IdEditar = id;
 };
 
 const editarProfesional = async () => {
@@ -103,8 +115,6 @@ const editarProfesional = async () => {
   const inputDias = document.getElementById("diasatencion").value;
 
   try {
-    btnEnviar.onclick = agregarProfesional;
-
     const datosModificados = {
       nombreCompleto: inputNombre,
       Matricula: inputMatricula,
@@ -112,32 +122,52 @@ const editarProfesional = async () => {
       Dias: inputDias,
     };
 
-    const consulta = await axios.put(
+    await axios.put(
       `http://localhost:3000/Profesionales/${IdEditar}`,
-      datosModificados,
+      datosModificados
     );
-    actualizarProfesional;
-    alert("Se edito los datos correctamente");
+
+    actualizarProfesional();
+    limpiarFormulario();
+
+    alert("Se editaron los datos correctamente.");
   } catch (error) {
-    console.log("ocurrio un error " + error.message);
+    console.log("Ocurrió un error: " + error.message);
   }
 };
 
 const VerificarEliminar = async (id) => {
   try {
     const consulta = await axios.get(
-      `http://localhost:3000/turnos?profesionalId=${id}`,
+      `http://localhost:3000/turnos?profesionalId=${id}`
     );
+
     const turnos = consulta.data;
 
     if (turnos.length > 0) {
       return confirm(
-        `el profesional tiene ${turnos.length} turno(s) asignado(s) ¿desea eliminarlo igualmente?`,
+        `El profesional tiene ${turnos.length} turno(s) asignado(s). ¿Desea eliminarlo igualmente?`
       );
     }
+
     return true;
-  } catch (r) {
-    console.log("Ocurrio un error " + r.message);
+  } catch (error) {
+    console.log("Ocurrió un error: " + error.message);
     return false;
   }
 };
+
+const limpiarFormulario = () => {
+  document.getElementById("Nombre").value = "";
+  document.getElementById("Matricula").value = "";
+  document.getElementById("Especialidad").value = "";
+  document.getElementById("diasatencion").value = "";
+
+  IdEditar = null;
+
+  btnEnviar.textContent = "Enviar";
+  btnEnviar.onclick = agregarProfesional;
+};
+
+// Estado inicial del botón
+btnEnviar.onclick = agregarProfesional;
