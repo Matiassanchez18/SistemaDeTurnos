@@ -169,5 +169,4 @@ const limpiarFormulario = () => {
   btnEnviar.onclick = agregarProfesional;
 };
 
-// Estado inicial del botón
 btnEnviar.onclick = agregarProfesional;
