@@ -8,7 +8,6 @@ const actualizarProfesional = async () => {
     const datos = consulta.data;
     const tabla = document.getElementById("tabla");
 
-    // Limpiar tabla antes de volver a cargar
     tabla.innerHTML = "";
 
     datos.forEach((profesionales) => {
@@ -78,9 +77,21 @@ const agregarProfesional = async () => {
 
 const eliminarProfesional = async (id) => {
   try {
-    const eliminar = await VerificarEliminar(id);
+    const consulta = await axios.get(
+      `http://localhost:3000/turnos?profesionalId=${id}`
+    );
 
-    if (!eliminar) return;
+    const turnos = consulta.data;
+
+    if (turnos.length > 0) {
+      const confirmar = confirm(
+        `El profesional tiene ${turnos.length} turno(s) asignado(s). ¿Desea eliminarlo igualmente?`
+      );
+
+      if (!confirmar) {
+        return;
+      }
+    }
 
     await axios.delete(`http://localhost:3000/Profesionales/${id}`);
 

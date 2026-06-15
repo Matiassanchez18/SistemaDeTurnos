@@ -3,21 +3,12 @@
     {
       "nombreCompleto": "pedro medrano",
       "Matricula": "1234123412",
-      "Especialidad": "Cardiologo",
+      "Especialidad": "Radiologo",
       "Dias": "martes miercoles jueves",
-      "id": "VW_d-L-0Ei4"
+      "id": "3xC0Qe_gOmQ"
     }
   ],
-  "pacientes": [
-    {
-      "id": "1",
-      "nombre": "Laura Martínez",
-      "dni": "35678901",
-      "fechaNacimiento": "1990-04-12",
-      "telefono": "3815550001",
-      "obraSocial": "OSDE"
-    }
-  ],
+  "pacientes": [],
   "turnos": [
     {
       "id": "1",
