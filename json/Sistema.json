@@ -10,23 +10,22 @@
   ],
   "pacientes": [
     {
-      "nombre": "Joaquin herrera",
-      "dni": "25621276",
-      "fechaNacimiento": "2000-02-16",
-      "telefono": "3815646928",
-      "obraSocial": "Sancord",
-      "id": "0scH8lpJa_Y"
-    }
-  ],
-  "turnos": [
+      "nombre": "pepe",
+      "dni": "23245554",
+      "fechaNacimiento": "2026-06-12",
+      "obraSocial": "osde",
+      "telefono": "5446366464",
+      "id": "GR1Lkc7-Ypw"
+    },
     {
-      "id": "1",
-      "pacienteId": 1,
-      "profesionalId": "VW_d-L-0Ei4",
-      "fecha": "2025-07-14",
-      "horario": "10:30",
-      "estado": "Pendiente"
+      "nombre": "ibai llanos",
+      "dni": "45343636",
+      "fechaNacimiento": "2026-01-19",
+      "obraSocial": "SANCOR",
+      "telefono": "4325353255",
+      "id": "XsgEgHrSBjo"
     }
   ],
+  "turnos": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

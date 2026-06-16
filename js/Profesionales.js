@@ -8,7 +8,7 @@ const actualizarProfesional = async () => {
     const datos = consulta.data;
     const tabla = document.getElementById("tabla");
 
-    // Limpiar tabla antes de volver a cargar
+    
     tabla.innerHTML = "";
 
     datos.forEach((profesionales) => {
