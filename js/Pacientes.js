@@ -52,7 +52,6 @@ const actualizarPaciente = async () => {
   }
 };
 
-//==================actualiza pacientes
 actualizarPaciente();
 
 const agregarPaciente = async () => {
@@ -90,14 +89,14 @@ const eliminarPaciente = async (id) =>{
 
   if (!confirmar) return;
   try {
-    const consultaTurnos = await axios.get(`http://localhost:3000/turnos?pacienteId=${id}`) //hace la relacion con los ids, pacientes y turnos
+    const consultaTurnos = await axios.get(`http://localhost:3000/turnos?pacienteId=${id}`) 
     const turnos = consultaTurnos.data //manda a data
 
     for (const turno of turnos) {
       await axios.delete(`http://localhost:3000/turnos/${turno.id}`)
     }
 
-    //await axios.delete(`http://localhost:3000/turnos/${turno.id}`)
+   
 
     await axios.delete(`http://localhost:3000/pacientes/${id}`)
 
@@ -110,7 +109,6 @@ const eliminarPaciente = async (id) =>{
 }
 
 
-//editar paciente
 const inputEditar = (nombre, dni, fechaNacimiento, obraSocial, telefono, id) => {
   document.getElementById("Nombre").value = nombre
   document.getElementById("DNI").value = dni
@@ -139,7 +137,7 @@ const editarPaciente = async () => {
             obraSocial: inputObraSocial,
             telefono: inputTelefono,
         }
-        //patch modifica
+        
          await axios.patch(`http://localhost:3000/pacientes/${IdEditar}`, datosModificados)
 
          actualizarPaciente()

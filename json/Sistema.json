@@ -10,15 +10,7 @@
   ],
   "pacientes": [
     {
-      "nombre": "fsgs",
-      "dni": "sgsg",
-      "fechaNacimiento": "2026-06-11",
-      "obraSocial": "osde",
-      "telefono": "5446366",
-      "id": "MPTBr8mAYZk"
-    },
-    {
-      "nombre": "dfsgs",
+      "nombre": "pepe",
       "dni": "23245554",
       "fechaNacimiento": "2026-06-12",
       "obraSocial": "osde",
@@ -26,23 +18,14 @@
       "id": "GR1Lkc7-Ypw"
     },
     {
-      "nombre": "Joaquin herrera",
-      "dni": "25621276",
-      "fechaNacimiento": "2000-02-16",
-      "telefono": "3815646928",
-      "obraSocial": "Sancord",
-      "id": "0scH8lpJa_Y"
+      "nombre": "ibai llanos",
+      "dni": "45343636",
+      "fechaNacimiento": "2026-01-19",
+      "obraSocial": "SANCOR",
+      "telefono": "4325353255",
+      "id": "XsgEgHrSBjo"
     }
   ],
-  "turnos": [
-    {
-      "id": "1",
-      "pacienteId": "0scH8lpJa_Y",
-      "profesionalId": "VW_d-L-0Ei4",
-      "fecha": "2025-07-14",
-      "horario": "10:30",
-      "estado": "Pendiente"
-    }
-  ],
+  "turnos": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
