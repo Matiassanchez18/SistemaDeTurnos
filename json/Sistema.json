@@ -10,6 +10,7 @@
   ],
   "pacientes": [
     {
+<<<<<<< HEAD
       "nombre": "fsgs",
       "dni": "sgsg",
       "fechaNacimiento": "2026-06-11",
@@ -24,12 +25,24 @@
       "obraSocial": "osde",
       "telefono": "5446366464",
       "id": "GR1Lkc7-Ypw"
+=======
+      "nombre": "Joaquin herrera",
+      "dni": "25621276",
+      "fechaNacimiento": "2000-02-16",
+      "telefono": "3815646928",
+      "obraSocial": "Sancord",
+      "id": "0scH8lpJa_Y"
+>>>>>>> 180292a1917c73d17492ca80737c108e4ea683a1
     }
   ],
   "turnos": [
     {
       "id": "1",
+<<<<<<< HEAD
       "pacienteId": null,
+=======
+      "pacienteId": 1,
+>>>>>>> 180292a1917c73d17492ca80737c108e4ea683a1
       "profesionalId": "VW_d-L-0Ei4",
       "fecha": "2025-07-14",
       "horario": "10:30",

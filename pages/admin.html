@@ -66,9 +66,9 @@
         </section>
       </section>
 
-      <section class="d-flex gap-3 align-content-lg-around container mb-5">
+      <section class="d-flex justify-content-between mb-5">
         <div
-          class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3"
+          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
         >
           <h4>Pacientes registrados</h4>
           <h3 id="PacientesRegistrados">200</h3>
@@ -76,7 +76,7 @@
         </div>
 
         <div
-          class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3"
+          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
         >
           <h4>Medicos/Profesionales</h4>
           <h3 id="MedicosProfesionales">69</h3>
@@ -86,14 +86,14 @@
         </div>
 
         <div
-          class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3"
+          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
         >
           <h4>Trunos</h4>
           <h3 id="=Trunos">40</h3>
         </div>
 
         <div
-          class="col-md-3 col-lg-3 col-sm12 border container rounded-2 border-black p-3"
+          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
         >
           <h4>Turnos terminados</h4>
           <h3>900</h3>
@@ -123,8 +123,12 @@
               <td>Pendiente</td>
               <td>
                 <div class="acciones">
-                  <button class="btn btn-danger"><i class="bi bi-trash "></i></button>
-                  <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                  <button class="btn btn-warning">
+                    <i class="bi bi-pencil"></i>
+                  </button>
                 </div>
               </td>
             </tr>
@@ -137,13 +141,38 @@
               <td>Pendiente</td>
               <td>
                 <div class="acciones">
-                  <button class="btn btn-danger"><i class="bi bi-trash "></i></button>
-                  <button class="btn btn-warning"><i class="bi bi-pencil"></i></button>
+                  <button class="btn btn-danger">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                  <button class="btn btn-warning">
+                    <i class="bi bi-pencil"></i>
+                  </button>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
+        <div class="d-flex justify-content-center mt-4">
+          <button
+            type="button"
+            class="btn btn-primary me-4"
+            data-bs-toggle="modal"
+            data-bs-target="#ModalTurno"
+          >
+            <i class="bi bi-plus"></i>
+            Nuevo Turno
+          </button>
+
+          <a class="btn btn-primary me-4" href="./Profesionales.html"
+            ><i class="bi bi-plus"></i>
+            Nuevo Profesional
+          </a>
+
+          <a class="btn btn-primary me-4" href="./pacientes.html">
+            <i class="bi bi-plus"></i>
+            Nuevo Paciente
+          </a>
+        </div>
       </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
