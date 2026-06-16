@@ -10,19 +10,27 @@
   ],
   "pacientes": [
     {
-      "id": "1",
-      "nombre": "Laura Martínez",
-      "dni": "35678901",
-      "fechaNacimiento": "1990-04-12",
-      "telefono": "3815550001",
-      "obraSocial": "OSDE"
+      "nombre": "fsgs",
+      "dni": "sgsg",
+      "fechaNacimiento": "2026-06-11",
+      "obraSocial": "osde",
+      "telefono": "5446366",
+      "id": "MPTBr8mAYZk"
+    },
+    {
+      "nombre": "dfsgs",
+      "dni": "23245554",
+      "fechaNacimiento": "2026-06-12",
+      "obraSocial": "osde",
+      "telefono": "5446366464",
+      "id": "GR1Lkc7-Ypw"
     }
   ],
   "turnos": [
     {
       "id": "1",
-      "pacienteId": 1,
-      "profesionalId": "_7tMxam8hkU",
+      "pacienteId": null,
+      "profesionalId": "VW_d-L-0Ei4",
       "fecha": "2025-07-14",
       "horario": "10:30",
       "estado": "Pendiente"
