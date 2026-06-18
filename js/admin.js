@@ -42,14 +42,20 @@ const actualizarTurno = async () => {
 const actualizarContadores = async () => {
   try {
     const resPacientes = await axios.get("http://localhost:3000/pacientes");
-    const resProfesionales = await axios.get("http://localhost:3000/Profesionales");
+    const resProfesionales = await axios.get(
+      "http://localhost:3000/Profesionales",
+    );
     const resTurnos = await axios.get("http://localhost:3000/turnos");
 
-    document.getElementById("PacientesRegistrados").textContent = resPacientes.data.length;
-    document.getElementById("MedicosProfesionales").textContent = resProfesionales.data.length;
+    document.getElementById("PacientesRegistrados").textContent =
+      resPacientes.data.length;
+    document.getElementById("MedicosProfesionales").textContent =
+      resProfesionales.data.length;
     document.getElementById("Turnos").textContent = resTurnos.data.length;
 
-    const terminados = resTurnos.data.filter(t => t.estado === "Confirmado" || t.estado === "Cancelado");
+    const terminados = resTurnos.data.filter(
+      (t) => t.estado === "Confirmado",
+    );
     document.getElementById("TurnosTerminados").textContent = terminados.length;
   } catch (error) {
     console.log("Error al actualizar contadores: " + error.message);
