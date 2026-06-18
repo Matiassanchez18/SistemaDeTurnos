@@ -51,9 +51,40 @@ const actualizarContadores = async () => {
 
     const terminados = resTurnos.data.filter(t => t.estado === "Confirmado" || t.estado === "Cancelado");
     document.getElementById("TurnosTerminados").textContent = terminados.length;
-
   } catch (error) {
     console.log("Error al actualizar contadores: " + error.message);
+  }
+};
+
+const cargarPacientes = async () => {
+  try {
+    const res = await axios.get("http://localhost:3000/pacientes");
+    const select = document.getElementById("PacienteId");
+    select.innerHTML = '<option value="">Seleccionar paciente</option>';
+    res.data.forEach((paciente) => {
+      const option = document.createElement("option");
+      option.value = paciente.id;
+      option.textContent = `${paciente.nombre} — ${paciente.id}`;
+      select.appendChild(option);
+    });
+  } catch (error) {
+    console.log("Error al cargar pacientes: " + error.message);
+  }
+};
+
+const cargarProfesionales = async () => {
+  try {
+    const res = await axios.get("http://localhost:3000/Profesionales");
+    const select = document.getElementById("ProfesionalId");
+    select.innerHTML = '<option value="">Seleccionar profesional</option>';
+    res.data.forEach((profesional) => {
+      const option = document.createElement("option");
+      option.value = profesional.id;
+      option.textContent = `${profesional.nombreCompleto} — ${profesional.Especialidad}`;
+      select.appendChild(option);
+    });
+  } catch (error) {
+    console.log("Error al cargar profesionales: " + error.message);
   }
 };
 
@@ -75,6 +106,8 @@ const agregarTurno = async () => {
     await axios.post("http://localhost:3000/turnos", datos);
     actualizarTurno();
     actualizarContadores();
+    btnEnviar.textContent = "Enviar";
+    btnEnviar.onclick = agregarTurno;
     alert("Turno agregado correctamente.");
   } catch (error) {
     console.log("Ocurrió un error: " + error.message);
@@ -110,6 +143,8 @@ const editarTurno = async () => {
     await axios.patch(`http://localhost:3000/turnos/${IdEditar}`, datos);
     actualizarTurno();
     actualizarContadores();
+    btnEnviar.textContent = "Enviar";
+    btnEnviar.onclick = agregarTurno;
     alert("Turno editado correctamente.");
   } catch (error) {
     console.log("Ocurrió un error: " + error.message);
@@ -126,7 +161,9 @@ const eliminarTurno = async (id) => {
   }
 };
 
-btnEnviar.addEventListener("click", agregarTurno);
+btnEnviar.onclick = agregarTurno;
 
+cargarPacientes();
+cargarProfesionales();
 actualizarContadores();
 actualizarTurno();

@@ -41,6 +41,14 @@
       "profesionalId": "asfasfasfasfasfasf",
       "estado": "🟠",
       "id": "nfLet9hFpVo"
+    },
+    {
+      "fecha": "2006-12-04",
+      "hora": "21:02",
+      "pacienteId": "asfasfasfasfasf",
+      "profesionalId": "asfasfasfasfasfasf",
+      "estado": "🟠",
+      "id": "JdOLFXjpSpI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
