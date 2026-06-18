@@ -6,6 +6,13 @@
       "Especialidad": "Cardiologo",
       "Dias": "martes miercoles jueves",
       "id": "VW_d-L-0Ei4"
+    },
+    {
+      "nombreCompleto": "pene",
+      "Matricula": "5464656454",
+      "Especialidad": "pene",
+      "Dias": "pene",
+      "id": "OFXW1-F-NP8"
     }
   ],
   "pacientes": [
@@ -26,6 +33,23 @@
       "id": "XsgEgHrSBjo"
     }
   ],
-  "turnos": [],
+  "turnos": [
+    {
+      "fecha": "275760-05-06",
+      "hora": "05:59",
+      "pacienteId": "",
+      "profesionalId": "asfasfasfasfasfasf",
+      "estado": "🟠",
+      "id": "nfLet9hFpVo"
+    },
+    {
+      "fecha": "2006-12-04",
+      "hora": "21:02",
+      "pacienteId": "asfasfasfasfasf",
+      "profesionalId": "asfasfasfasfasfasf",
+      "estado": "🟠",
+      "id": "JdOLFXjpSpI"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
