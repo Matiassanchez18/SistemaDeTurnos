@@ -51,3 +51,28 @@ const actualizarTurno = async () => {
   }
 };
 actualizarTurno(); 
+const agregarTurno = async () => {
+  const inputFecha = document.getElementById("Fecha").value;
+  const inputHora = document.getElementById("Hora").value;
+  const inputPacienteId = document.getElementById("PacienteId").value;
+  const inputProfesionalId = document.getElementById("ProfesionalId").value;
+  const inputEstado = document.getElementById("Estado").value;
+
+  try {
+    const datos = {
+      fecha: inputFecha,
+      hora: inputHora,
+      pacienteId: inputPacienteId,
+      profesionalId: inputProfesionalId,
+      estado: inputEstado,
+    };
+
+    await axios.post("http://localhost:3000/turnos", datos);
+    actualizarTurnos();
+    limpiarFormulario();
+
+    alert("Turno agregado correctamente.");
+  } catch (error) {
+    console.log("Ocurrió un error: " + error.message);
+  }
+};

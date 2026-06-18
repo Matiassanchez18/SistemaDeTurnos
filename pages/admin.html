@@ -14,7 +14,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../style/Admin.css" />
-    
     <title>Sistema de turnos</title>
   </head>
   <body>
@@ -29,31 +28,24 @@
         <hr />
         <ul class="nav nav-pills flex-column mb-auto mt-3">
           <li>
-            <a href="../Index.html" class="nav-link link-dark"> Inicio </a>
+            <a href="../Index.html" class="nav-link link-dark">Inicio</a>
           </li>
           <li>
-            <a href="./admin.html" class="nav-link link-dark active">
-              Turnos
-            </a>
+            <a href="./admin.html" class="nav-link link-dark active">Turnos</a>
           </li>
           <li class="nav-item">
-            <a
-              href="./Profesionales.html"
-              class="nav-link link-dark"
-              aria-current="page"
-            >
+            <a href="./Profesionales.html" class="nav-link link-dark" aria-current="page">
               Profesionales
             </a>
           </li>
           <li>
-            <a href="./pacientes.html" class="nav-link link-dark">
-              Pacientes
-            </a>
+            <a href="./pacientes.html" class="nav-link link-dark">Pacientes</a>
           </li>
         </ul>
         <hr />
       </div>
     </header>
+
     <main class="mainAdaptativo">
       <section class="container">
         <section class="container mt-5 mb-5">
@@ -67,34 +59,21 @@
       </section>
 
       <section class="d-flex justify-content-between mb-5">
-        <div
-          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
-        >
+        <div class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1">
           <h4>Pacientes registrados</h4>
           <h3 id="PacientesRegistrados">200</h3>
           <a href="./pacientes.html" class="btn btn-primary">Ver pacientes</a>
         </div>
-
-        <div
-          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
-        >
+        <div class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1">
           <h4>Medicos/Profesionales</h4>
           <h3 id="MedicosProfesionales">69</h3>
-          <a href="./Profesionales.html" class="btn btn-primary"
-            >Profesionales</a
-          >
+          <a href="./Profesionales.html" class="btn btn-primary">Profesionales</a>
         </div>
-
-        <div
-          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
-        >
+        <div class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1">
           <h4>Turnos</h4>
           <h3 id="Turnos">40</h3>
         </div>
-
-        <div
-          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
-        >
+        <div class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1">
           <h4>Turnos terminados</h4>
           <h3>900</h3>
         </div>
@@ -107,51 +86,15 @@
               <th scope="col">#</th>
               <th scope="col">Fecha</th>
               <th scope="col">Hora</th>
-              <th scope="col">ID pacientes</th>
-              <th scope="col">ID Medicos</th>
+              <th scope="col">ID Paciente</th>
+              <th scope="col">ID Medico</th>
               <th scope="col">Estado</th>
               <th scope="col">Acciones</th>
             </tr>
           </thead>
-          <tbody id="tablaTurnos">
-            <tr>
-              <td>1</td>
-              <td>2026-06-15</td>
-              <td>10:30</td>
-              <td>35678901</td>
-              <td>101</td>
-              <td>Pendiente</td>
-              <td>
-                <div class="acciones">
-                  <button class="btn btn-danger">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                  <button class="btn btn-warning">
-                    <i class="bi bi-pencil"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>2026-06-15</td>
-              <td>11:00</td>
-              <td>35545401</td>
-              <td>102</td>
-              <td>Pendiente</td>
-              <td>
-                <div class="acciones">
-                  <button class="btn btn-danger">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                  <button class="btn btn-warning">
-                    <i class="bi bi-pencil"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="tablaTurnos"></tbody>
         </table>
+
         <div class="d-flex justify-content-center mt-4">
           <button
             type="button"
@@ -159,22 +102,95 @@
             data-bs-toggle="modal"
             data-bs-target="#ModalTurno"
           >
-            <i class="bi bi-plus"></i>
-            Nuevo Turno
+            <i class="bi bi-plus"></i> Nuevo Turno
           </button>
 
-          <a class="btn btn-primary me-4" href="./Profesionales.html"
-            ><i class="bi bi-plus"></i>
-            Nuevo Profesional
+          <a class="btn btn-primary me-4" href="./Profesionales.html">
+            <i class="bi bi-plus"></i> Nuevo Profesional
           </a>
 
           <a class="btn btn-primary me-4" href="./pacientes.html">
-            <i class="bi bi-plus"></i>
-            Nuevo Paciente
+            <i class="bi bi-plus"></i> Nuevo Paciente
           </a>
         </div>
       </section>
     </main>
+
+    <!-- MODAL NUEVO TURNO -->
+    <div
+      class="modal fade"
+      id="ModalTurno"
+      tabindex="-1"
+      aria-labelledby="ModalTurnoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="ModalTurnoLabel">Nuevo Turno</h2>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="Fecha" class="form-label">Fecha</label>
+                <input type="date" class="form-control" id="Fecha" required />
+              </div>
+              <div class="mb-3">
+                <label for="Hora" class="form-label">Hora</label>
+                <input type="time" class="form-control" id="Hora" required />
+              </div>
+              <div class="mb-3">
+                <label for="PacienteId" class="form-label">ID Paciente</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="PacienteId"
+                  placeholder="ej: GR1Lkc7-Ypw"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="ProfesionalId" class="form-label">ID Profesional</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="ProfesionalId"
+                  placeholder="ej: VW_d-L-0Ei4"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="Estado" class="form-label">Estado</label>
+                <select class="form-select" id="Estado" required>
+                  <option value="Pendiente">Pendiente</option>
+                  <option value="Confirmado">Confirmado</option>
+                  <option value="Cancelado">Cancelado</option>
+                </select>
+              </div>
+              <button id="btnEnviar" type="button" class="btn btn-primary">
+                Enviar
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../js/admin.js"></script>
     <script
