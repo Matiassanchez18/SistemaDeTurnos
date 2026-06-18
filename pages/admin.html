@@ -88,7 +88,7 @@
         <div
           class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
         >
-          <h4>Turnos terminados</h4>
+          <h4>Turnos confirmados</h4>
           <h3 id="TurnosTerminados">0</h3>
         </div>
       </section>
@@ -118,6 +118,12 @@
           >
             <i class="bi bi-plus"></i> Nuevo Turno
           </button>
+          <a href="./pacientes.html" class="btn btn-primary me-4"
+            ><i class="bi bi-plus"></i>Nuevo paciente</a
+          >
+          <a href="./Profesionales.html" class="btn btn-primary me-4"
+            ><i class="bi bi-plus"></i>Nuevo profesional</a
+          >
         </div>
       </section>
     </main>
@@ -169,9 +175,9 @@
               <div class="mb-3">
                 <label for="Estado" class="form-label">Estado</label>
                 <select class="form-select" id="Estado" required>
-                  <option value="🟠">🟠 Pendiente</option>
-                  <option value="🟢">🟢 Confirmado</option>
-                  <option value="🔴">🔴 Cancelado</option>
+                  <option value="Pendiente">🟠 Pendiente</option>
+                  <option value="Confirmado">🟢 Confirmado</option>
+                  <option value="Cancelado">🔴 Cancelado</option>
                 </select>
               </div>
               <button id="btnEnviar" type="button" class="btn btn-primary">

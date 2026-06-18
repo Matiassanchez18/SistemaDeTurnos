@@ -8,10 +8,10 @@
       "id": "VW_d-L-0Ei4"
     },
     {
-      "nombreCompleto": "pene",
+      "nombreCompleto": "Pedro",
       "Matricula": "5464656454",
-      "Especialidad": "pene",
-      "Dias": "pene",
+      "Especialidad": "Oftamologo",
+      "Dias": "Todos los dias",
       "id": "OFXW1-F-NP8"
     }
   ],
@@ -35,12 +35,12 @@
   ],
   "turnos": [
     {
-      "fecha": "275760-05-06",
-      "hora": "05:59",
-      "pacienteId": "XsgEgHrSBjo",
+      "fecha": "12123-03-12",
+      "hora": "00:34",
+      "pacienteId": "GR1Lkc7-Ypw",
       "profesionalId": "VW_d-L-0Ei4",
-      "estado": "🟢",
-      "id": "nfLet9hFpVo"
+      "estado": "Confirmado",
+      "id": "qIkleBnagZU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

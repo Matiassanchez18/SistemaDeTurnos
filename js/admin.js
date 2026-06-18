@@ -54,7 +54,7 @@ const actualizarContadores = async () => {
     document.getElementById("Turnos").textContent = resTurnos.data.length;
 
     const terminados = resTurnos.data.filter(
-      (t) => t.estado === "Confirmado" || t.estado === "Cancelado",
+      (t) => t.estado === "Confirmado",
     );
     document.getElementById("TurnosTerminados").textContent = terminados.length;
   } catch (error) {
