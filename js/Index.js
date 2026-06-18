@@ -20,7 +20,7 @@ const verificarUsuario = () => {
                 <a class="nav-link" href="./pages/Pacientes.html">Pacientes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./pages/admin.html">admin</a>
+                <a class="nav-link" href="./pages/admin.html">Turnos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./pages/Profesionales.html">Profesionales</a>

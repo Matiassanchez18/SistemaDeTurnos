@@ -13,17 +13,16 @@
       "Especialidad": "Oftamologo",
       "Dias": "Todos los dias",
       "id": "OFXW1-F-NP8"
+    },
+    {
+      "nombreCompleto": "Sonia velardez",
+      "Matricula": "1234123512",
+      "Especialidad": "Radiologo",
+      "Dias": "jueves, viernes y sabado",
+      "id": "_Mzk_StynJU"
     }
   ],
   "pacientes": [
-    {
-      "nombre": "pepe",
-      "dni": "23245554",
-      "fechaNacimiento": "2026-06-12",
-      "obraSocial": "osde",
-      "telefono": "5446366464",
-      "id": "GR1Lkc7-Ypw"
-    },
     {
       "nombre": "ibai llanos",
       "dni": "45343636",
@@ -33,15 +32,6 @@
       "id": "XsgEgHrSBjo"
     }
   ],
-  "turnos": [
-    {
-      "fecha": "12123-03-12",
-      "hora": "00:34",
-      "pacienteId": "GR1Lkc7-Ypw",
-      "profesionalId": "VW_d-L-0Ei4",
-      "estado": "Confirmado",
-      "id": "qIkleBnagZU"
-    }
-  ],
+  "turnos": [],
   "$schema": "./node_modules/json-server/schema.json"
 }
