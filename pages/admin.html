@@ -34,7 +34,11 @@
             <a href="./admin.html" class="nav-link link-dark active">Turnos</a>
           </li>
           <li class="nav-item">
-            <a href="./Profesionales.html" class="nav-link link-dark" aria-current="page">
+            <a
+              href="./Profesionales.html"
+              class="nav-link link-dark"
+              aria-current="page"
+            >
               Profesionales
             </a>
           </li>
@@ -59,23 +63,33 @@
       </section>
 
       <section class="d-flex justify-content-between mb-5">
-        <div class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1">
+        <div
+          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
+        >
           <h4>Pacientes registrados</h4>
           <h3 id="PacientesRegistrados">200</h3>
           <a href="./pacientes.html" class="btn btn-primary">Ver pacientes</a>
         </div>
-        <div class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1">
+        <div
+          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
+        >
           <h4>Medicos/Profesionales</h4>
           <h3 id="MedicosProfesionales">69</h3>
-          <a href="./Profesionales.html" class="btn btn-primary">Profesionales</a>
+          <a href="./Profesionales.html" class="btn btn-primary"
+            >Profesionales</a
+          >
         </div>
-        <div class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1">
+        <div
+          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
+        >
           <h4>Turnos</h4>
           <h3 id="Turnos">40</h3>
         </div>
-        <div class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1">
-        <h4>Turnos terminados</h4>
-        <h3 id="TurnosTerminados">0</h3>
+        <div
+          class="col-md-6 col-lg-3 col-sm-12 border container rounded-2 border-black p-2 me-1"
+        >
+          <h4>Turnos terminados</h4>
+          <h3 id="TurnosTerminados">0</h3>
         </div>
       </section>
 
@@ -137,25 +151,21 @@
                 <input type="time" class="form-control" id="Hora" required />
               </div>
               <div class="mb-3">
-                <label for="PacienteId" class="form-label">ID Paciente</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="PacienteId"
-                  placeholder="ej: GR1Lkc7-Ypw"
-                  required
-                />
+                <label for="PacienteId" class="form-label">Paciente</label>
+                <select class="form-select" id="PacienteId" required></select>
               </div>
+
               <div class="mb-3">
-                <label for="ProfesionalId" class="form-label">ID Profesional</label>
-                <input
-                  type="text"
-                  class="form-control"
+                <label for="ProfesionalId" class="form-label"
+                  >Profesional</label
+                >
+                <select
+                  class="form-select"
                   id="ProfesionalId"
-                  placeholder="ej: VW_d-L-0Ei4"
                   required
-                />
+                ></select>
               </div>
+
               <div class="mb-3">
                 <label for="Estado" class="form-label">Estado</label>
                 <select class="form-select" id="Estado" required>
