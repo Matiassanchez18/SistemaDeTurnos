@@ -104,19 +104,10 @@
           >
             <i class="bi bi-plus"></i> Nuevo Turno
           </button>
-
-          <a class="btn btn-primary me-4" href="./Profesionales.html">
-            <i class="bi bi-plus"></i> Nuevo Profesional
-          </a>
-
-          <a class="btn btn-primary me-4" href="./pacientes.html">
-            <i class="bi bi-plus"></i> Nuevo Paciente
-          </a>
         </div>
       </section>
     </main>
 
-    <!-- MODAL NUEVO TURNO -->
     <div
       class="modal fade"
       id="ModalTurno"
@@ -168,13 +159,13 @@
               <div class="mb-3">
                 <label for="Estado" class="form-label">Estado</label>
                 <select class="form-select" id="Estado" required>
-                  <option value="Pendiente">Pendiente</option>
-                  <option value="Confirmado">Confirmado</option>
-                  <option value="Cancelado">Cancelado</option>
+                  <option value="🟠">🟠 Pendiente</option>
+                  <option value="🟢">🟢 Confirmado</option>
+                  <option value="🔴">🔴 Cancelado</option>
                 </select>
               </div>
               <button id="btnEnviar" type="button" class="btn btn-primary">
-                Enviar
+                Confirmar
               </button>
             </form>
           </div>

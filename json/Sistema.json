@@ -35,27 +35,21 @@
   ],
   "turnos": [
     {
-      "id": "1",
-      "pacienteId": "GR1Lkc7-Ypw",
-      "profesionalId": "VW_d-L-0Ei4",
-      "fecha": "2026-06-15",
-      "hora": "10:00"
+      "fecha": "275760-05-06",
+      "hora": "05:59",
+      "pacienteId": "",
+      "profesionalId": "asfasfasfasfasfasf",
+      "estado": "🟠",
+      "id": "nfLet9hFpVo"
     },
     {
-      "id": "2",
-      "pacienteId": "XsgEgHrSBjo",
-      "profesionalId": "OFXW1-F-NP8",
-      "fecha": "2026-06-16",
-      "hora": "14:00"
-    },
-    { 
-
-    "id": "3",
-    "pacienteId": "GR1Lkc7-Ypk",
-    "profesionalId": "OFXW1-F-NP8",
-    "fecha": "2026-06-17",
-    "hora": "16:00"
-  }
+      "fecha": "275760-05-06",
+      "hora": "05:59",
+      "pacienteId": "",
+      "profesionalId": "asfasfasfasfasfasf",
+      "estado": "🟠",
+      "id": "oMN6w4xH5bM"
+    }
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }
