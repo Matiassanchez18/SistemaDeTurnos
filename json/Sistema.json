@@ -1,0 +1,37 @@
+{
+  "Profesionales": [
+    {
+      "nombreCompleto": "pedro medrano",
+      "Matricula": "1234123412",
+      "Especialidad": "Cardiologo",
+      "Dias": "martes miercoles jueves",
+      "id": "VW_d-L-0Ei4"
+    },
+    {
+      "nombreCompleto": "Pedro",
+      "Matricula": "5464656454",
+      "Especialidad": "Oftamologo",
+      "Dias": "Todos los dias",
+      "id": "OFXW1-F-NP8"
+    },
+    {
+      "nombreCompleto": "Sonia velardez",
+      "Matricula": "1234123512",
+      "Especialidad": "Radiologo",
+      "Dias": "jueves, viernes y sabado",
+      "id": "_Mzk_StynJU"
+    }
+  ],
+  "pacientes": [
+    {
+      "nombre": "ibai llanos",
+      "dni": "45343636",
+      "fechaNacimiento": "2026-01-19",
+      "obraSocial": "SANCOR",
+      "telefono": "4325353255",
+      "id": "XsgEgHrSBjo"
+    }
+  ],
+  "turnos": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
