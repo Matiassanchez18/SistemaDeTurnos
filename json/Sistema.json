@@ -41,14 +41,6 @@
       "profesionalId": "asfasfasfasfasfasf",
       "estado": "🟠",
       "id": "nfLet9hFpVo"
-    },
-    {
-      "fecha": "275760-05-06",
-      "hora": "05:59",
-      "pacienteId": "",
-      "profesionalId": "asfasfasfasfasfasf",
-      "estado": "🟠",
-      "id": "oMN6w4xH5bM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

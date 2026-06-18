@@ -39,6 +39,24 @@ const actualizarTurno = async () => {
   }
 };
 
+const actualizarContadores = async () => {
+  try {
+    const resPacientes = await axios.get("http://localhost:3000/pacientes");
+    const resProfesionales = await axios.get("http://localhost:3000/Profesionales");
+    const resTurnos = await axios.get("http://localhost:3000/turnos");
+
+    document.getElementById("PacientesRegistrados").textContent = resPacientes.data.length;
+    document.getElementById("MedicosProfesionales").textContent = resProfesionales.data.length;
+    document.getElementById("Turnos").textContent = resTurnos.data.length;
+
+    const terminados = resTurnos.data.filter(t => t.estado === "Confirmado" || t.estado === "Cancelado");
+    document.getElementById("TurnosTerminados").textContent = terminados.length;
+
+  } catch (error) {
+    console.log("Error al actualizar contadores: " + error.message);
+  }
+};
+
 const agregarTurno = async () => {
   const inputFecha = document.getElementById("Fecha").value;
   const inputHora = document.getElementById("Hora").value;
@@ -55,7 +73,8 @@ const agregarTurno = async () => {
       estado: inputEstado,
     };
     await axios.post("http://localhost:3000/turnos", datos);
-    actualizarTurno(); 
+    actualizarTurno();
+    actualizarContadores();
     alert("Turno agregado correctamente.");
   } catch (error) {
     console.log("Ocurrió un error: " + error.message);
@@ -70,10 +89,10 @@ const inputEditar = (id, fecha, hora, pacienteId, profesionalId, estado) => {
   document.getElementById("ProfesionalId").value = profesionalId;
   document.getElementById("Estado").value = estado;
   btnEnviar.textContent = "Editar";
-  btnEnviar.onclick = editarTurno; 
+  btnEnviar.onclick = editarTurno;
 };
 
-const editarTurno = async () => { 
+const editarTurno = async () => {
   const inputFecha = document.getElementById("Fecha").value;
   const inputHora = document.getElementById("Hora").value;
   const inputPacienteId = document.getElementById("PacienteId").value;
@@ -82,14 +101,15 @@ const editarTurno = async () => {
 
   try {
     const datos = {
-      fecha: inputFecha,      
+      fecha: inputFecha,
       hora: inputHora,
       pacienteId: inputPacienteId,
       profesionalId: inputProfesionalId,
       estado: inputEstado,
     };
     await axios.patch(`http://localhost:3000/turnos/${IdEditar}`, datos);
-    actualizarTurno(); // ← sin S
+    actualizarTurno();
+    actualizarContadores();
     alert("Turno editado correctamente.");
   } catch (error) {
     console.log("Ocurrió un error: " + error.message);
@@ -99,7 +119,8 @@ const editarTurno = async () => {
 const eliminarTurno = async (id) => {
   try {
     await axios.delete(`http://localhost:3000/turnos/${id}`);
-    actualizarTurno(); // ← sin S
+    actualizarTurno();
+    actualizarContadores();
   } catch (error) {
     console.log("Ocurrió un error: " + error.message);
   }
@@ -107,4 +128,5 @@ const eliminarTurno = async (id) => {
 
 btnEnviar.addEventListener("click", agregarTurno);
 
+actualizarContadores();
 actualizarTurno();
